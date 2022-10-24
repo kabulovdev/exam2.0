@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package reating;
+
+service ReatingService {
+    rpc Create(ReatingInfo) returns (ReatingInfo);
+    rpc GetReating(Id) returns (ReatingInfo);
+    rpc Update(ReatingInfo) returns (ReatingInfo);
+    rpc Delet(Id) returns (EmptyReating);
+}
+
+message EmptyReating {
+
+}
+
+message Id {
+    int64 id =1;
+}
+
+message ReatingInfo {
+    int64 id =1;
+    int64 post_id=2;
+    int64 custumer_id=3;
+   int64 reating=4;
+   string description=5;
+}
